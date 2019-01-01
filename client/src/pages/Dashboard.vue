@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content" v-if="subjects">
     <div class="md-layout">
       <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50">
         <nav-tabs-card dir="rtl">
@@ -44,6 +44,8 @@
 </template>
 
 <script>
+import SubServices from "../Services/sub-services"
+
 import {
   // will remove this components...
 
@@ -66,7 +68,12 @@ export default {
   },
   data() {
     return {
+      subjects: true
     };
+  },
+  async created() {
+    let d = (await SubServices.getSubjects()).data
+    this.subjects = d.subjects
   }
 };
 </script>
