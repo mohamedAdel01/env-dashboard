@@ -1,0 +1,37 @@
+{
+    "list": {
+        "items": [
+           {
+               "route": "/inbox",
+               "icon": "inbox",
+               "name": "الوارد"
+           },
+           {
+               "route": "/important",
+               "icon": "person",
+               "name": "مهم جدا"
+           },
+           {
+               "route": "/import",
+               "icon": "content_paste",
+               "name": "الداخلي"
+           },
+           {
+               "route": "/export",
+               "icon": "library_books",
+               "name": "الصادر"
+           },
+           {
+               "route": "/saved",
+               "icon": "bubble_chart",
+               "name": "المحفوظ"
+           },
+           {
+               "route": "/signs",
+               "icon": "history",
+               "name": "علامات"
+           }
+        ]
+        
+    }
+}
