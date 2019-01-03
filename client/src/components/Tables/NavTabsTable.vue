@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <md-table v-model="users" @md-selected="onSelect">
-      <md-table-row slot="md-table-row" slot-scope="{ item }" md-selectable="multiple" md-auto-select>
-        <h4>اسم الموضوع</h4>
-        <p>{{ item.name }}</p>
+  <div v-if="subjects">
+    <md-table v-model="subjects">
+      <md-table-row slot="md-table-row" slot-scope="{ item }" class="tr">
+        <h4 @click="onSelect(item.id)">{{ item.name }}</h4>
+        <p>{{ item.discription }}</p>
         <md-table-cell>
           <md-button class="md-just-icon md-simple md-danger">
             <md-icon>close</md-icon>
@@ -18,27 +18,36 @@
 <script>
 export default {
   name: "nav-tabs-table",
+  props: ['subjects'],
   data() {
     return {
-      selected: [],
-      users: [
-        {
-          name: 'Sign contract for "What are conference organizers afraid of?"'
-        },
-        {
-          name: "Lines From Great Russian Literature? Or E-mails From My Boss?"
-        },
-        {
-          name:
-            "Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit"
-        }
-      ]
+      selected: []
     };
   },
   methods: {
-    onSelect: function(items) {
-      this.selected = items;
+    onSelect(id) {
+      this.$emit('selectSub', id)
+    },
+    dd() {
+      console.log('dddd')
     }
   }
 };
 </script>
+
+<style scoped>
+h4{
+  font-size: 23px;
+  
+}
+
+h4:hover{
+  text-decoration: underline;
+  color: green
+}
+
+p{
+  font-size: 15px;
+}
+</style>
+

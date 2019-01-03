@@ -90,6 +90,9 @@ export default {};
 
 .md-card {
   margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
 }
 
 .table-responsive {
